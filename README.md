@@ -1,2 +1,2 @@
-docker with sbt
+docker+sbt
 ===============
