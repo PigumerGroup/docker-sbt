@@ -1,4 +1,4 @@
-FROM docker
+FROM docker:stable-dind
 
 RUN apk --update add curl zip bash openjdk8 && \
     echo 'curl -s "https://get.sdkman.io" | bash' >> /tmp/setup.sh && \
