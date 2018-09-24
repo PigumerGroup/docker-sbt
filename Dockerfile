@@ -1,9 +1,21 @@
-FROM docker:stable-dind
+FROM debian
 
-RUN apk --update add curl zip bash openjdk8 && \
+RUN apt update && \
+    apt upgrade -y && \
+    apt install -y openjdk-8-jdk curl bash zip git make gnupg2 apt-transport-https software-properties-common && \
+    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
+    add-apt-repository \
+       "deb [arch=amd64] https://download.docker.com/linux/debian \
+       $(lsb_release -cs) \
+       stable" && \
+    apt update && \
+    apt install -y docker-ce && \
     echo 'curl -s "https://get.sdkman.io" | bash' >> /tmp/setup.sh && \
     echo 'source "$HOME/.sdkman/bin/sdkman-init.sh"' >> /tmp/setup.sh && \
     echo 'sdk install sbt' >> /tmp/setup.sh && \
     chmod +x /tmp/setup.sh && \
     bash -c /tmp/setup.sh && \
-    ln -s /root/.sdkman/candidates/sbt/current/bin/sbt /usr/local/bin/sbt
+    ln -s /root/.sdkman/candidates/sbt/current/bin/sbt /usr/local/bin/sbt && \
+    curl -L https://git.io/n-install | bash -s -- -y
+
+
