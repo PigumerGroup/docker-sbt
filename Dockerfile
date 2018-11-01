@@ -16,6 +16,7 @@ RUN apt update && \
     chmod +x /tmp/setup.sh && \
     bash -c /tmp/setup.sh && \
     ln -s /root/.sdkman/candidates/sbt/current/bin/sbt /usr/local/bin/sbt && \
-    curl -L https://git.io/n-install | bash -s -- -y
+    curl -L https://git.io/n-install | bash -s -- -y && \
+    ln -s /root/n/bin/n /usr/local/bin/n
 
 
