@@ -3,3 +3,11 @@
 
 docker+sbt
 ===============
+
+```
+$ docker run -it --rm --privileged  pigumergroup/docker-sbt:awscli /bin/bash
+```
+
+```
+# service docker start
+```
