@@ -3,3 +3,11 @@
 
 docker+sbt
 ===============
+
+```
+$ docker run -it --rm --privileged pigumergroup/docker-sbt:debian-plus-n /bin/bash
+```
+
+```
+# service docker start
+```
