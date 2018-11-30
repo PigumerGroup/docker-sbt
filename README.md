@@ -5,7 +5,7 @@ docker+sbt
 ===============
 
 ```
-$ docker run -it --rm --privileged pigumergroup/docker-sbt:latest /bin/bash
+$ docker run -it --rm --privileged pigumergroup/docker-sbt:sbt-1.1 /bin/bash
 ```
 
 ```
